@@ -27,6 +27,26 @@ export default class extends React.Component{
   }
 }
 
+function gerarNumeros () {
+  let numeros = []
+  for(let i = 0 ; i < 6 ; i++){
+    let seguir = false
+    while(seguir = false){
+      let numero = Math.floor(Math.random * 59) + 1
+      for(let j ; j < numeros.length ; j++){
+        if(numeros[j] !== numero){
+          seguir = true
+        }
+      }
+
+      if(seguir == true)
+        numeros.push(numero)
+    }
+  }
+
+  return numeros
+}
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
